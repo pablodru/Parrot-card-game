@@ -8,60 +8,60 @@ while (numberCards % 2 !== 0 || numberCards > 14 || numberCards < 4) {
 onclick="cardChosen()"
 
 const arrayCards = [
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/bobrossparrot.gif" alt="bobross" />
+      <img class="image" src="img/bobrossparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/explodyparrot.gif" alt="bobross" />
+      <img class="image" src="img/explodyparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/fiestaparrot.gif" alt="bobross" />
+      <img class="image" src="img/fiestaparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/metalparrot.gif" alt="bobross" />
+      <img class="image" src="img/metalparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/revertitparrot.gif" alt="bobross" />
+      <img class="image" src="img/revertitparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/tripletsparrot.gif" alt="bobross" />
+      <img class="image" src="img/tripletsparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
-  `<div class="card" onclick="cardChosen(this)">
+  `<div class="card" onclick="cardChosen(this)" data-test="card">
     <div class="front-face face">
-      <img class="image" src="img/back.png" alt="card" />
+      <img class="image" src="img/back.png" alt="card" data-test="face-down-image"/>
     </div>
     <div class="back-face face">
-      <img class="image" src="img/unicornparrot.gif" alt="bobross" />
+      <img class="image" src="img/unicornparrot.gif" alt="bobross" data-test="face-up-image"/>
     </div>
   </div>`,
 ];
