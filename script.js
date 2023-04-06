@@ -109,7 +109,7 @@ function cardChosen(chosen) {
     let content = verso.querySelector('img')
     selectedCards.push(content.src);
 
-    if (selectedCards.length%2==0 && selectedCards[-1]===selectedCards[-2]){
+    if (selectedCards.length%2==0 && selectedCards[selectedCards.length - 1]===selectedCards[selectedCards.length - 2]){
         alert('boa')
     }
     
