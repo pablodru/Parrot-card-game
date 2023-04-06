@@ -56,15 +56,15 @@ h1 {
   transform-style: preserve-3d;
 }
 
-.back-face {
+.back-face{
   transform: rotateY(180deg);
 }
 
-.card:hover .back-face {
+.selected-back{
   transform: rotateY(0deg);
 }
 
-.card:hover .front-face {
+.selected-front{
   transform: rotateY(-180deg);
 }
 
