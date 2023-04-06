@@ -98,6 +98,7 @@ for (let i = 0; i < numberCards; i++) {
 
 let selectedCards =[];
 
+
 function cardChosen(chosen) {
     console.log(chosen)
 
@@ -109,8 +110,11 @@ function cardChosen(chosen) {
     let content = verso.querySelector('img')
     selectedCards.push(content.src);
 
-    if (selectedCards.length%2==0 && selectedCards[selectedCards.length - 1]===selectedCards[selectedCards.length - 2]){
-        alert('boa')
+    let counter = 0;
+
+    if (selectedCards.length%2==0 && selectedCards[selectedCards.length - 1] !== selectedCards[selectedCards.length - 2]){
+      frente.classList.remove('selected-front');
+      verso.classList.remove('selected-back');
+      console.log("funcionou?")
     }
-    
 }
