@@ -98,23 +98,35 @@ for (let i = 0; i < numberCards; i++) {
 
 let selectedCards =[];
 
+function removeCard(frontCard) {
+  frontCard.classList.remove('selected-front');
+}
+
+function removeCard2(backCard) {
+  backCard.classList.remove('selected-back');
+}
+
+let frente=[];
+let verso=[];
 
 function cardChosen(chosen) {
-    console.log(chosen)
 
-    const frente = chosen.firstElementChild;
-    frente.classList.add('selected-front')
-    const verso = chosen.lastElementChild;
-    verso.classList.add('selected-back')
+    frente.push(chosen.firstElementChild);
+    frente[frente.length -1].classList.add('selected-front');
+    verso.push(chosen.lastElementChild);
+    verso[verso.length -1].classList.add('selected-back');
 
-    let content = verso.querySelector('img')
+    let content = verso[verso.length-1].querySelector('img');
     selectedCards.push(content.src);
 
-    let counter = 0;
-
     if (selectedCards.length%2==0 && selectedCards[selectedCards.length - 1] !== selectedCards[selectedCards.length - 2]){
-      frente.classList.remove('selected-front');
-      verso.classList.remove('selected-back');
-      console.log("funcionou?")
+      const carta1 = verso[verso.length-1]
+      setTimeout(removeCard,1000, frente[frente.length -1])
+      setTimeout(removeCard2, 1000, verso[verso.length -1])
+      setTimeout(removeCard,1000, frente[frente.length -2])
+      setTimeout(removeCard2,1000, verso[verso.length-2])
+
     }
-}
+    console.log(frente);
+    console.log(verso);
+  }
