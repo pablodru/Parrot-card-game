@@ -112,6 +112,17 @@ let verso = [];
 let counter = 0;
 let counterWins = 0;
 
+let time = 0;
+function timeCounter() {
+  time ++
+
+  const searchTime = document.querySelector('h2');
+  searchTime.innerHTML = time;
+
+}
+
+const myInterval = setInterval(timeCounter, 1000);
+
 function cardChosen(chosen) {
   frente.push(chosen.firstElementChild);
   frente[frente.length - 1].classList.add("selected-front");
@@ -136,7 +147,13 @@ function cardChosen(chosen) {
   } else if (selectedCards.length % 2 == 0) {
     counterWins++;
     if (counterWins == listFinal.length / 2) {
-      alert(`Parabéns! Você ganhou em ${counter / 2} jogadas`);
+      clearInterval(myInterval);
+      alert(`Parabéns! Você ganhou em ${counter / 2} jogadas! A duração do jogo foi de ${time} segundos`);
+
+      const answer = prompt("Deseja jogar novamente?");
+      if (answer == "sim"){
+        location.reload();
+      }
     }
   }
 }
