@@ -5,7 +5,7 @@ while (numberCards % 2 !== 0 || numberCards > 14 || numberCards < 4) {
   );
 }
 
-onclick="cardChosen()"
+onclick = "cardChosen()";
 
 const arrayCards = [
   `<div class="card" onclick="cardChosen(this)" data-test="card">
@@ -68,7 +68,7 @@ const arrayCards = [
 
 const listCards = [];
 const listPairCards = [];
-for (let i = 0; i < numberCards/2; i++) {
+for (let i = 0; i < numberCards / 2; i++) {
   listCards.push(arrayCards[i]);
   listPairCards.push(arrayCards[i]);
 }
@@ -77,15 +77,15 @@ function comparator() {
   return Math.random() - 0.5;
 }
 
-const number = comparator
+const number = comparator;
 
 listCards.sort(comparator);
 listPairCards.sort(comparator);
 
 let listFinal = [];
-for (let j=0; j<listCards.length; j++) {
-    listFinal.push(listCards[j]);
-    listFinal.push(listCards[j]);
+for (let j = 0; j < listCards.length; j++) {
+  listFinal.push(listCards[j]);
+  listFinal.push(listCards[j]);
 }
 
 const main = document.querySelector(".main");
@@ -93,40 +93,50 @@ const main = document.querySelector(".main");
 listFinal = listFinal.sort(comparator);
 
 for (let i = 0; i < numberCards; i++) {
-  main.innerHTML += listFinal[i]
+  main.innerHTML += listFinal[i];
 }
 
-let selectedCards =[];
+let selectedCards = [];
 
 function removeCard(frontCard) {
-  frontCard.classList.remove('selected-front');
+  frontCard.classList.remove("selected-front");
 }
 
 function removeCard2(backCard) {
-  backCard.classList.remove('selected-back');
+  backCard.classList.remove("selected-back");
 }
 
-let frente=[];
-let verso=[];
+let frente = [];
+let verso = [];
+
+let counter = 0;
+let counterWins = 0;
 
 function cardChosen(chosen) {
+  frente.push(chosen.firstElementChild);
+  frente[frente.length - 1].classList.add("selected-front");
+  verso.push(chosen.lastElementChild);
+  verso[verso.length - 1].classList.add("selected-back");
 
-    frente.push(chosen.firstElementChild);
-    frente[frente.length -1].classList.add('selected-front');
-    verso.push(chosen.lastElementChild);
-    verso[verso.length -1].classList.add('selected-back');
+  let content = verso[verso.length - 1].querySelector("img");
+  selectedCards.push(content.src);
 
-    let content = verso[verso.length-1].querySelector('img');
-    selectedCards.push(content.src);
+  counter++;
 
-    if (selectedCards.length%2==0 && selectedCards[selectedCards.length - 1] !== selectedCards[selectedCards.length - 2]){
-      const carta1 = verso[verso.length-1]
-      setTimeout(removeCard,1000, frente[frente.length -1])
-      setTimeout(removeCard2, 1000, verso[verso.length -1])
-      setTimeout(removeCard,1000, frente[frente.length -2])
-      setTimeout(removeCard2,1000, verso[verso.length-2])
-
+  if (
+    selectedCards.length % 2 == 0 &&
+    selectedCards[selectedCards.length - 1] !==
+      selectedCards[selectedCards.length - 2]
+  ) {
+    const carta1 = verso[verso.length - 1];
+    setTimeout(removeCard, 1000, frente[frente.length - 1]);
+    setTimeout(removeCard2, 1000, verso[verso.length - 1]);
+    setTimeout(removeCard, 1000, frente[frente.length - 2]);
+    setTimeout(removeCard2, 1000, verso[verso.length - 2]);
+  } else if (selectedCards.length % 2 == 0) {
+    counterWins++;
+    if (counterWins == listFinal.length / 2) {
+      alert(`Parabéns! Você ganhou em ${counter / 2} jogadas`);
     }
-    console.log(frente);
-    console.log(verso);
   }
+}

@@ -44,46 +44,54 @@ h1 {
 .face {
   width: 100%;
   height: 100%;
-  background-color: #A7E9AF;
+  background-color: #a7e9af;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   backface-visibility: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
   transform-style: preserve-3d;
 }
 
-.back-face{
+.back-face {
   transform: rotateY(180deg);
 }
 
-.selected-back{
+.selected-back {
   transform: rotateY(0deg);
 }
 
-.selected-front{
+.selected-front {
   transform: rotateY(-180deg);
 }
 
 .image {
-  width: 9.01vw;
-  height: 15.898vh;
+  width: 100px;
+  height: 100px;
 }
 
 @media (max-width: 375px) {
   .main {
     flex-direction: column;
-    gap: 5.4vh;
+    gap: 34px;
   }
 
   .card {
-    width: 31.2vw;
+    width: 117px;
+    height: 146px;
   }
 
-  .back {
-    width: 26.67vw;
+  .header {
+    width: 99%;
+    heigth: auto;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
   }
 }
