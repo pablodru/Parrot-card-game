@@ -148,7 +148,7 @@ function cardChosen(chosen) {
     counterWins++;
     if (counterWins == listFinal.length / 2) {
       clearInterval(myInterval);
-      alert(`Parabéns! Você ganhou em ${counter / 2} jogadas! A duração do jogo foi de ${time} segundos`);
+      alert(`Parabéns! Você ganhou em ${counter / 2} jogadas! A duração do jogo foi de ${time} segundos!`);
 
       const answer = prompt("Deseja jogar novamente?");
       if (answer == "sim"){
