@@ -106,8 +106,8 @@ function removeCard2(backCard) {
   backCard.classList.remove("selected-back");
 }
 
-let frente = [];
-let verso = [];
+let front = [];
+let back = [];
 
 let counter = 0;
 let counterWins = 0;
@@ -124,12 +124,13 @@ function timeCounter() {
 const myInterval = setInterval(timeCounter, 1000);
 
 function cardChosen(chosen) {
-  frente.push(chosen.firstElementChild);
-  frente[frente.length - 1].classList.add("selected-front");
-  verso.push(chosen.lastElementChild);
-  verso[verso.length - 1].classList.add("selected-back");
+  
+  front.push(chosen.firstElementChild);
+  front[front.length - 1].classList.add("selected-front");
+  back.push(chosen.lastElementChild);
+  back[back.length - 1].classList.add("selected-back");
 
-  let content = verso[verso.length - 1].querySelector("img");
+  let content = back[back.length - 1].querySelector("img");
   selectedCards.push(content.src);
 
   counter++;
@@ -139,11 +140,11 @@ function cardChosen(chosen) {
     selectedCards[selectedCards.length - 1] !==
       selectedCards[selectedCards.length - 2]
   ) {
-    const carta1 = verso[verso.length - 1];
-    setTimeout(removeCard, 1000, frente[frente.length - 1]);
-    setTimeout(removeCard2, 1000, verso[verso.length - 1]);
-    setTimeout(removeCard, 1000, frente[frente.length - 2]);
-    setTimeout(removeCard2, 1000, verso[verso.length - 2]);
+    const carta1 = back[back.length - 1];
+    setTimeout(removeCard, 1000, front[front.length - 1]);
+    setTimeout(removeCard2, 1000, back[back.length - 1]);
+    setTimeout(removeCard, 1000, front[front.length - 2]);
+    setTimeout(removeCard2, 1000, back[back.length - 2]);
   } else if (selectedCards.length % 2 == 0) {
     counterWins++;
     if (counterWins == listFinal.length / 2) {
