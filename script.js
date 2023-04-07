@@ -150,7 +150,7 @@ function cardChosen(chosen) {
       clearInterval(myInterval);
       alert(`Parabéns! Você ganhou em ${counter / 2} jogadas! A duração do jogo foi de ${time} segundos!`);
 
-      const answer = prompt("Deseja jogar novamente?");
+      const answer = prompt("Você gostaria de reiniciar a partida? (sim ou não)");
       if (answer == "sim"){
         location.reload();
       }
